@@ -60,29 +60,33 @@ TEST (Atom, matchSuccessToVar) {
 // ?- X=tom, tom=X.
 // X = tom.
 TEST (Atom, matchSuccessToVarInstantedToDiffConstant) {
-	Atom tom("tom");
 	Variable X("X");
+	Atom tom("tom");
 	X.match(tom);
-	tom.match(X);
-	ASSERT_EQ("X = tom.", )
+	ASSERT_EQ("X = tom.", tom.match(X));
 }
 
 // ?- X=jerry, tom=X.
 // false.
 TEST (Atom, matchFailureToVarInstantedToDiffConstant) {
-
+	Variable X("X");
+	Atom tom("tom"), jerry("jerry");
+	X.match(jerry);
+	ASSERT_EQ("false.", tom.match(X));
 }
 
 // ?- X = 5.
 // X = 5.
 TEST (Var, matchSuccessToNumber) {
- 
+	Number number_5("number_5", "5");
+	Variable X("X");
+	ASSERT_EQ("X = 5.", X.match(number_5));
 }
 
 // ?- X=25, X= 100.
 // false.
 TEST (Var, matchFailureToTwoDiffNumbers) {
-
+	
 }
 
 // ?- X=tom, X= 25.

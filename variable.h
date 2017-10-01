@@ -3,6 +3,7 @@
 #include <string>
 using std :: string;
 class Atom;
+class Number;
 class Variable {
 private:
 	const string _symbol;
@@ -15,14 +16,7 @@ public:
 	void set_value(string key);
 	bool get_assignable();
 	void set_assignable(bool key);
-	/*bool match(Atom atom) {
-		bool ret = _assignable;
-		if(_assignable) {
-			_value = atom._symbol;
-			_assignable = false;
-		}
-		return ret;
-	}*/
-
+	string match(Number operand);
+	string match(Atom operand);
 };
 #endif
