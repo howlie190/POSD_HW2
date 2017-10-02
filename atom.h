@@ -10,8 +10,8 @@ private:
 public:
 	Atom(string);
 	bool match(Number operand);
-	string match(Variable &variable);
-	string match(Atom operand);
+	bool match(Variable &variable);
+	bool match(Atom operand);
 	string get_symbol();
 };
 #endif

@@ -16,7 +16,7 @@ public:
 	void set_value(string key);
 	bool get_assignable();
 	void set_assignable(bool key);
-	string match(Number operand);
-	string match(Atom operand);
+	bool match(Number operand);
+	bool match(Atom operand);
 };
 #endif

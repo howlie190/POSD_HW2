@@ -6,13 +6,13 @@ hw2: main.o atom.o number.o variable.o
 main.o: main.cpp utTerm.h
 	g++ -std=c++11 -c main.cpp
 
-atom.o: atom.cpp atom.h
+atom.o: atom.cpp Atom.h
 	g++ -std=c++11 -c atom.cpp
 
-number.o: number.cpp number.h
+number.o: number.cpp Number.h
 	g++ -std=c++11 -c number.cpp
 
-variable.o: variable.cpp variable.h
+variable.o: variable.cpp Variable.h
 	g++ -std=c++11 -c variable.cpp
 
 clean:

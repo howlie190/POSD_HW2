@@ -12,7 +12,7 @@ public:
 	Number(string, string);
 	bool match(Atom operand);
 	bool match(Number operand);
-	string match(Variable &variable);
+	bool match(Variable &variable);
 	string value();
 	string symbol();
 };
